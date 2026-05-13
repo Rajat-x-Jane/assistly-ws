@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Assistly WS logo card</title>
+  <desc id="desc">Assistly WS brand card with navy background and orange accent.</desc>
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="90" y="90" width="1020" height="450" rx="24" fill="#FFFFFF"/>
+  <rect x="130" y="140" width="120" height="120" rx="16" fill="#F97316"/>
+  <text x="190" y="216" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#FFFFFF">AW</text>
+  <text x="290" y="205" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="850" fill="#0F172A">Assistly WS</text>
+  <text x="294" y="270" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#64748B">Your Growth, Our Mission</text>
+  <text x="294" y="350" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#1E293B">Founder-led website, marketing, GST and business support for India.</text>
+</svg>

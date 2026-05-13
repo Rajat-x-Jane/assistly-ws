@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://assistlyws.in/sitemap.xml
