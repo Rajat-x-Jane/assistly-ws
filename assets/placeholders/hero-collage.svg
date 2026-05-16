@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620" role="img" aria-label="Watercolor collage of website, branding and SEO work">
+  <defs>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="760" height="620" fill="#FAF6EC"/>
+  <rect width="760" height="620" filter="url(#paper)" opacity="0.38"/>
+  <path filter="url(#soft)" d="M87 180C126 76 260 47 363 84c124 44 209 13 281 111 69 94 18 236-82 295-111 65-280 40-390-36C70 384 47 287 87 180z" fill="#8DB7D7" opacity="0.4"/>
+  <path filter="url(#soft)" d="M394 122c75-47 187 0 219 82 30 78-31 167-116 168-92 2-170-85-141-166 8-23 18-58 38-84z" fill="#F97316" opacity="0.23"/>
+  <path filter="url(#soft)" d="M188 356c70-61 184-62 256-8 64 47 72 136 12 181-71 53-200 28-259-34-43-45-53-101-9-139z" fill="#A6B89A" opacity="0.34"/>
+  <g transform="translate(120 128) rotate(-5)">
+    <rect width="360" height="250" rx="20" fill="#fff" stroke="#0F172A" stroke-width="5"/>
+    <path d="M0 54h360" stroke="#0F172A" stroke-width="5"/>
+    <circle cx="35" cy="28" r="6" fill="#F97316"/><circle cx="60" cy="28" r="6" fill="#8DB7D7"/><circle cx="85" cy="28" r="6" fill="#A6B89A"/>
+    <rect x="38" y="88" width="130" height="28" rx="14" fill="#FFF7ED"/>
+    <rect x="38" y="138" width="272" height="16" rx="8" fill="#DDEAF4"/>
+    <rect x="38" y="172" width="190" height="16" rx="8" fill="#E6DDD1"/>
+    <path d="M244 90c27-14 61 4 68 33 7 31-18 61-50 58-32-3-53-39-37-66 5-9 11-18 19-25z" fill="#F97316" opacity="0.22"/>
+  </g>
+  <g transform="translate(412 318) rotate(7)">
+    <rect width="196" height="178" rx="18" fill="#fff" stroke="#0F172A" stroke-width="5"/>
+    <path d="M44 55h108M44 88h86M44 121h112" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M44 145h58" stroke="#F97316" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <path d="M94 454c34 34 83 50 147 47" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 11"/>
+  <path d="M225 482l24 19-27 15" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#F97316" opacity="0.76"><circle cx="620" cy="119" r="5"/><circle cx="653" cy="148" r="4"/><circle cx="607" cy="165" r="4"/><circle cx="657" cy="202" r="5"/></g>
+</svg>

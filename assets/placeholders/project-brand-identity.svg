@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" role="img" aria-label="Bold brand identity concept placeholder">
+  <rect width="640" height="460" fill="#FAF6EC"/>
+  <path d="M132 84c82-58 229-50 316 9 70 48 102 130 71 204-37 89-156 129-267 104-111-24-190-99-184-185 4-59 20-100 64-132z" fill="#F97316" opacity="0.25"/>
+  <circle cx="241" cy="226" r="91" fill="#fff" stroke="#0F172A" stroke-width="5"/>
+  <path d="M211 251l31-93 48 93M226 219h48" stroke="#0F172A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="363" y="151" width="132" height="48" rx="24" fill="#0F2A44"/>
+  <rect x="363" y="222" width="94" height="48" rx="24" fill="#F97316"/>
+  <rect x="363" y="293" width="122" height="48" rx="24" fill="#A6B89A"/>
+</svg>

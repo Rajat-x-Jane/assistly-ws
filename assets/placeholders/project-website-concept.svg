@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" role="img" aria-label="Modern website concept placeholder">
+  <rect width="640" height="460" fill="#FAF6EC"/>
+  <path d="M46 88c79-66 206-72 302-34 95 37 181 112 185 209 3 83-70 138-166 150-110 14-232-20-300-89C6 262-19 142 46 88z" fill="#8DB7D7" opacity="0.32"/>
+  <rect x="88" y="82" width="464" height="304" rx="18" fill="#fff" stroke="#0F172A" stroke-width="5"/>
+  <path d="M88 142h464" stroke="#0F172A" stroke-width="5"/>
+  <rect x="128" y="188" width="184" height="92" rx="14" fill="#FFF7ED"/>
+  <path d="M344 202h132M344 236h92M128 318h348" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M128 350h180" stroke="#F97316" stroke-width="8" stroke-linecap="round"/>
+</svg>
