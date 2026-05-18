@@ -1,66 +1,127 @@
 (function () {
-  const header = document.querySelector("[data-header]");
+  "use strict";
+
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navMenu = document.querySelector("[data-nav-menu]");
-  const backTop = document.querySelector("[data-back-top]");
-  const contactForm = document.querySelector("[data-contact-form]");
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  const setScrolledState = () => {
-    if (header) {
-      header.classList.toggle("is-scrolled", window.scrollY > 12);
-    }
-    if (backTop) {
-      backTop.classList.toggle("is-visible", window.scrollY > 520);
-    }
-  };
-
-  setScrolledState();
-  window.addEventListener("scroll", setScrolledState, { passive: true });
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("is-open");
-      navToggle.classList.toggle("is-open", isOpen);
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-      document.body.classList.toggle("nav-open", isOpen);
-    });
-
-    navMenu.addEventListener("click", (event) => {
-      const link = event.target.closest("a");
-      if (!link) return;
-      navMenu.classList.remove("is-open");
-      navToggle.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Open menu");
-      document.body.classList.remove("nav-open");
-    });
-  }
-
-  const currentFile = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".primary-nav a[href]").forEach((link) => {
-    const linkFile = link.getAttribute("href").split("#")[0];
-    if (linkFile === currentFile) {
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    const isBlogPage = currentPage.startsWith("blog") && href === "blog.html";
+    if (href === currentPage || isBlogPage || (currentPage === "" && href === "index.html")) {
       link.classList.add("is-active");
       link.setAttribute("aria-current", "page");
     }
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const target = document.querySelector(link.getAttribute("href"));
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("is-open");
+      navToggle.classList.toggle("is-active", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      document.body.classList.toggle("nav-open", isOpen);
     });
-  });
 
-  if (backTop) {
-    backTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
+        document.body.classList.remove("nav-open");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navMenu.classList.contains("is-open")) {
+        navMenu.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
+        document.body.classList.remove("nav-open");
+        navToggle.focus();
+      }
     });
   }
 
+  const yearTargets = document.querySelectorAll("[data-year]");
+  yearTargets.forEach((target) => {
+    target.textContent = new Date().getFullYear();
+  });
+
+  const slider = document.querySelector("[data-hero-slider]");
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll("[data-slide]"));
+    const dots = Array.from(slider.querySelectorAll("[data-slide-dot]"));
+    const prevButton = slider.querySelector("[data-prev-slide]");
+    const nextButton = slider.querySelector("[data-next-slide]");
+    const intervalMs = 5000;
+    let activeIndex = 0;
+    let timer = null;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function showSlide(index) {
+      activeIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-selected", String(isActive));
+      });
+    }
+
+    function startTimer() {
+      if (prefersReducedMotion || timer) return;
+      timer = window.setInterval(() => {
+        showSlide(activeIndex + 1);
+      }, intervalMs);
+    }
+
+    function stopTimer() {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    prevButton?.addEventListener("click", () => {
+      showSlide(activeIndex - 1);
+      stopTimer();
+      startTimer();
+    });
+
+    nextButton?.addEventListener("click", () => {
+      showSlide(activeIndex + 1);
+      stopTimer();
+      startTimer();
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener("click", () => {
+        showSlide(dotIndex);
+        stopTimer();
+        startTimer();
+      });
+    });
+
+    slider.addEventListener("mouseenter", stopTimer);
+    slider.addEventListener("mouseleave", startTimer);
+    slider.addEventListener("focusin", stopTimer);
+    slider.addEventListener("focusout", startTimer);
+
+    showSlide(activeIndex);
+    startTimer();
+  }
+
+  const revealTargets = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -71,38 +132,19 @@
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.14 }
     );
 
-    document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+    revealTargets.forEach((target) => observer.observe(target));
   } else {
-    document.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
+    revealTargets.forEach((target) => target.classList.add("is-visible"));
   }
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
-      const formData = new FormData(contactForm);
-      const name = String(formData.get("name") || "").trim();
-      const business = String(formData.get("business") || "").trim();
-      const service = String(formData.get("service") || "").trim();
-      const note = String(formData.get("message") || "").trim();
-
-      const lines = [
-        "Hi Assistly WS, I want to start a project for my business. Please guide me.",
-        name ? "Name: " + name : "",
-        business ? "Business: " + business : "",
-        service ? "Service: " + service : "",
-        note ? "Project note: " + note : ""
-      ].filter(Boolean);
-
-      const url = "https://wa.me/918059134416?text=" + encodeURIComponent(lines.join("\n"));
-      window.open(url, "_blank", "noopener");
+  const contactForm = document.querySelector("[data-contact-form]");
+  const formStatus = document.querySelector("[data-form-status]");
+  if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", () => {
+      formStatus.textContent = "Opening your email app to send this inquiry.";
     });
   }
 })();

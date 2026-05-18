@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="280" viewBox="0 0 360 280" role="img" aria-label="Soft blue watercolor wash">
-  <filter id="soften"><feGaussianBlur stdDeviation="8"/></filter>
-  <path filter="url(#soften)" d="M56 67C94 21 164 13 222 32c68 22 117 82 105 137-13 59-85 87-152 84-71-3-143-39-155-91C11 122 25 103 56 67z" fill="#8DB7D7" opacity="0.56"/>
-  <path d="M77 82c34-36 92-48 143-31 57 18 96 67 88 112-9 48-66 75-124 76-60 1-124-27-138-72-10-32 4-56 31-85z" fill="#BFD7EA" opacity="0.32"/>
-</svg>
