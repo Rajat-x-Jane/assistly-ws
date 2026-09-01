@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service | Assistly WS</title>
+  <meta name="description" content="Book an Assistly WS service across website, app, e-commerce, UI/UX, SEO, branding, marketing, registration, GST, tax, accounting, and compliance support.">
+  <link rel="canonical" href="https://assistlyws.in/book/">
+  <meta property="og:title" content="Book a Service | Assistly WS">
+  <meta property="og:description" content="Share what you need and Assistly will help shape the right scope.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://assistlyws.in/book/">
+  <meta property="og:image" content="https://assistlyws.in/assets/images/workspace.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <script src="/assets/js/navbar.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-shell-header></div>
+
+  <main id="main">
+    <section class="page-hero grid-bg">
+      <div class="container" data-reveal>
+        <span class="section-kicker">BOOK / SERVICE REQUEST</span>
+        <h1>Book a service without over-explaining the whole business.</h1>
+        <p class="lead">Choose what you need, add the basics, and share the useful constraints. Assistly can help shape the scope from there.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-shell">
+        <aside data-reveal>
+          <span class="section-kicker">FORM / PROGRESSIVE</span>
+          <h2>Start with the need.</h2>
+          <p class="lead">Once a service is selected, the business and contact sections open up on the same page.</p>
+          <p class="form-note">Submissions use the existing email fallback for this static build.</p>
+        </aside>
+        <form class="assist-form cornered" action="mailto:teamassistlyws@gmail.com" method="post" enctype="text/plain" data-booking-form data-reveal>
+          <section class="form-section">
+            <span class="chip-label">01 / What do you need?</span>
+            <div class="chip-grid">
+              <label class="chip"><input type="checkbox" name="services" value="technology">Website</label>
+              <label class="chip"><input type="checkbox" name="services" value="technology">App</label>
+              <label class="chip"><input type="checkbox" name="services" value="technology">E-commerce</label>
+              <label class="chip"><input type="checkbox" name="services" value="technology">UI-UX</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">SEO</label>
+              <label class="chip"><input type="checkbox" name="services" value="technology">Automation</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">Branding</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">Logo</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">Packaging</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">Marketing</label>
+              <label class="chip"><input type="checkbox" name="services" value="brand-growth">Advertising</label>
+              <label class="chip"><input type="checkbox" name="services" value="business-compliance">Registration</label>
+              <label class="chip"><input type="checkbox" name="services" value="business-compliance">GST-Tax</label>
+              <label class="chip"><input type="checkbox" name="services" value="business-compliance">Accounting</label>
+              <label class="chip"><input type="checkbox" name="services" value="other">Other</label>
+            </div>
+          </section>
+
+          <section class="form-section is-locked" data-progressive-section>
+            <span class="chip-label">02 / Business basics</span>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">Name</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span class="field-label">Business name</span>
+                <input type="text" name="business-name" autocomplete="organization">
+              </label>
+            </div>
+            <label class="field">
+              <span class="field-label">Business type</span>
+              <input type="text" name="business-type" placeholder="Startup, local service, e-commerce, agency, manufacturer...">
+            </label>
+          </section>
+
+          <section class="form-section is-locked" data-progressive-section>
+            <span class="chip-label">03 / Contact</span>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label class="field">
+                <span class="field-label">Phone / WhatsApp</span>
+                <input type="tel" name="phone" autocomplete="tel" required>
+              </label>
+            </div>
+            <label class="field">
+              <span class="field-label">Preferred contact method</span>
+              <select name="preferred-contact">
+                <option value="whatsapp">WhatsApp</option>
+                <option value="phone">Phone</option>
+                <option value="email">Email</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="form-section is-locked" data-progressive-section>
+            <span class="chip-label">04 / Budget and context</span>
+            <div class="chip-grid">
+              <label class="chip"><input type="radio" name="budget" value="under-25000">Under INR 25k</label>
+              <label class="chip"><input type="radio" name="budget" value="25000-75000">INR 25k-75k</label>
+              <label class="chip"><input type="radio" name="budget" value="75000-150000">INR 75k-1.5L</label>
+              <label class="chip"><input type="radio" name="budget" value="150000-plus">INR 1.5L+</label>
+              <label class="chip"><input type="radio" name="budget" value="not-sure">Not sure</label>
+            </div>
+            <label class="field">
+              <span class="field-label">Short project description</span>
+              <textarea name="project-description" maxlength="300" placeholder="What are you trying to start, fix, launch, or grow?"></textarea>
+            </label>
+          </section>
+
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-shell-footer></div>
+</body>
+</html>
